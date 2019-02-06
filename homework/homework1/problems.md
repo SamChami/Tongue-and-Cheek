@@ -4,22 +4,26 @@
 ###  Problem 1.1, Stephens page 12
 
 What are the basic tasks that all software engineering projects must handle?
->  TODO
+>  Requirements gathering, high-level design, low-level design, development, and testing.
 
 ###  Problem 1.2, Stephens page 12
 
 Give a one sentence description of each of the tasks you listed in Exercise 1.
->  TODO
+>  *  **Requirements gathering** -- determining your or a client's wants and needs and turning them into agreed upon requirements documents
+>  *  **High-level design** -- sorting out what technologies to use and general information about the project architecture
+>  *  **Low-level design** -- details *how* the major pieces of the project should work sufficiently enough to guide developers to implement those pieces
+>  *  **Development** -- implementing the refined low-level designs into code, testing it, and writing more code
+>  *  **Testing** -- testing pieces of code and making sure everything works and if something doesn't then finding out what's wrong and fixing it
 
 ###  Problem 2.4, Stephens page 26
 
 Like Microsoft Word, Google Docs [sic] provides some simple change tracking tools. Go to http://www.google.com/docs/about/ to learn more and sign up [if you do not have an account already]. Then create a document, save it, close it, reopen it, and make changes to it as you did in Exercise 1.
->  TODO
+>  I created a document, saved it, closed it, reopened it, and make changes to it. I've used Google Docs for many documents and I find it interesting how Google Docs essentially contains all of the features Stephens says a good document management system should provide.
 
 ###  Problem 2.5, Stephens page 26
 
 What does JBGE stand for and what does it mean?
->  TODO
+>  JBGE stands for "just barely good enough" and it's a school of thought that's idea is if you provide too much documentation, you end up wasting a lot of time updating it as you make changes to the code.
 
 
 **Use the following table of data for Exercises 3.2 and 3.4.**
