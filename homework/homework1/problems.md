@@ -32,29 +32,38 @@ What does JBGE stand for and what does it mean?
 ###  Problem 3.2, Stephens page 51
 
 Use critical path methods to find the total expected time from the project's start for each task's completion. Find the critical path. What are the tasks on the critical path? What is the total expected duration of the project in working days?
->  TODO
+```
+Critical Path: 32 days
+Tasks on Path: H + I + D + E + M + Q
+Time per Task: 3 + 3 + 6 + 7 + 9 + 4 = 32 days
+```
 
 ###  Problem 3.4, Stephens page 51
 
 Build a Gantt chart for the network you drew in Exercise 3. [Yes, I know, you weren't assigned that one — however, when you do Exercise 2 you should have enough information for this one.] Start on Wednesday, January 1, 2020, and don't work on weekends or the following holidays:
 ![TableFor3.4.png](TableFor3.4.png)
->  TODO
+>  ![34-Gantt.jpg](34-Gantt.jpg)
 
 
 ###  Problem 3.6, Stephens page 51
 
 In addition to losing time from vacation and sick leave, projects can suffer from problems that just strike out of nowhere. Sort of a bad version of deus ex machina. For example, senior management could decide to switch your target platform from Windows desktop PSs to the latest smartwatch technology. Or a strike in the Far East could delay the shipment of your new servers. Or one of your developers might move to Iceland. How can you handle these sorts of completely unpredictable problems?
->  TODO
+>  Since unpredictable delays are inevitable in many CS projects, it's best to keep a live version of a Gantt chart. Also, your projected time should not reflect the project deadline. For example, it would be unrealistic to expect a company to launch an app in 45 days that they predict to take 45 days to create. There should always be room to account for unexpected issues and just general QA.
 
 ###  Problem 3.8, Stephens page 51
 
 What are the two biggest mistakes you can make while tracking tasks?
->  TODO
+>  1. Ignore a problem when it arises and hope you can make time for it later.
+>  2. Piling extra developers on a task assuming it will reduce the time it takes to finish.
 
 ###  Problem 4.1, Stephens page 82
 
 List five characteristics of good requirements.
->  TODO
+>  Clear   
+>  Unambiguous   
+>  Consistent   
+>  Prioritized   
+>  Verifiable
 
 ###  Problem 4.3, Stephens page 82
 
