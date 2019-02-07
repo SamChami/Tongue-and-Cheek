@@ -96,6 +96,9 @@ Figure 4-1 [below] shows the design for a simple hangman game that will run on s
 ![Figure4-1.jpg](Figure4-1.jpg)
 
 Brainstorm this application and see if you can think of ways you might change it. Use the MOSCOW method to prioritize your changes.
->  Must change the color scheme to be easier to see the letters. Essentially different background color to contrast the letters and the background color.  
->  Must change the button color to better illustrate the empty gaps between the words.
->  Could change the skeleton to a better illustration.
+* I must change the display of the game, going from landscape layout to a portrait mode layout in order to better fit the smartphone layout.
+* I must change the color scheme to be easier to see the letters. Essentially different background color to contrast the letters and the background color.  
+* I must change the button color to better illustrate the empty gaps between the words.
+* I could change the skeleton to a better illustration of the skeleton.
+* I could change the game by adding a timer to the game to make it more exciting.
+* I could change the layout of the game, by having the hangman illustration in the top center of the page, with the possible selectable letters on the lower half of the screen, as if it is the keyboard.
