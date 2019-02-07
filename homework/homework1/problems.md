@@ -96,4 +96,6 @@ Figure 4-1 [below] shows the design for a simple hangman game that will run on s
 ![Figure4-1.jpg](Figure4-1.jpg)
 
 Brainstorm this application and see if you can think of ways you might change it. Use the MOSCOW method to prioritize your changes.
->  TODO
+>  Must change the color scheme to be easier to see the letters. Essentially different background color to contrast the letters and the background color.  
+>  Must change the button color to better illustrate the empty gaps between the words.
+>  Could change the skeleton to a better illustration.
