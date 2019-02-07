@@ -87,7 +87,22 @@ Suppose you want to build a program called TimeShifter to upload and download fi
 *  p. Send a text message to an administrator if an upload/download fails more than it's maximum retury umber of times.
 
 For this exercise, list the audience-oriented categories for each requirement. Are there requirements in each category? [If not, state why not…]
->  TODO
+* a. Business Requirement
+* b. User Requirement
+* c. User Requirement
+* d. User Requirement
+* e. User Requirement
+* f. Functional Requirement
+* g. Functional Requirement
+* h. Functional Requirement
+* i. Nonfunctional Requirement
+* j. Functional Requirement
+* k. Functional Requirement
+* l. User Requirement
+* m. Nonfunctional Requirement
+* n. Business Requirement
+* o. Business Requirement
+* p. Business Requirement
 
 ###  Problem 4.9, Stephens page 83-84
 
@@ -106,3 +121,4 @@ Brainstorm this application and see if you can think of ways you might change it
 * I could add a text box at the top of the app that displays the theme of the word in order to better help the player guess the word.
 * I could remove the 'New Game' button and replace it with 'New word'.
 * At the time, I won't add any animations when the player loses or wins the game.
+* At the time, I won't add any background music as the player is playing the game.
