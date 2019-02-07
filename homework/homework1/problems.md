@@ -87,22 +87,22 @@ Suppose you want to build a program called TimeShifter to upload and download fi
 *  p. Send a text message to an administrator if an upload/download fails more than it's maximum retury umber of times.
 
 For this exercise, list the audience-oriented categories for each requirement. Are there requirements in each category? [If not, state why not…]
-* a. User Requirement
-* b. User Requirement
-* c. User Requirement
-* d. User Requirement
-* e. User Requirement
-* f. Functional Requirement
-* g. Functional Requirement
-* h. Functional Requirement
-* i. Nonfunctional Requirement
-* j. Functional Requirement
-* k. Functional Requirement
-* l. User Requirement
-* m. Nonfunctional Requirement
-* n. Business Requirement
-* o. Business Requirement
-* p. Business Requirement
+> * a. User Requirement
+> * b. User Requirement
+> * c. User Requirement
+> * d. User Requirement
+> * e. User Requirement
+> * f. Functional Requirement
+> * g. Functional Requirement
+> * h. Functional Requirement
+> * i. Nonfunctional Requirement
+> * j. Functional Requirement
+> * k. Functional Requirement
+> * l. User Requirement
+> * m. Nonfunctional Requirement
+> * n. Business Requirement
+> * o. Business Requirement
+> * p. Business Requirement
 
 ###  Problem 4.9, Stephens page 83-84
 
