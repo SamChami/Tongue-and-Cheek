@@ -6,22 +6,16 @@ Inspired by QWOP and Getting Over it, 2D games with simple yet ridiculous game m
 ##  5.2  CSCI Component Breakdown
 
 ###  5.2.1 GUI Client CSC
-TODO
+The users GUI will be fairly simple, only showing when the tongue mechanic is in affect and a timer. It will also have a pause button in the top left.
 
 ####  5.2.1.1 Client Login/Registration Screen CSU
-TODO
+There will be no registration period, but rather a Play, level select, credits, and exit screen
 
 ####  5.2.1.2 Client Activities List Panel CSU
-TODO
-
-#####  5.2.1.2.1 ActivityBanner module
-TODO
-
-####  5.2.1.3 Client Current Activity Screen CSU
-TODO
+Play will begin the player at level one while level select will allow them to select any levels. While the game is linear, the option to skip around to easier and harder levels is important for the social / competitive aspect of the game.
 
 A Simple Mockup of our current CSCI is shown below.
-![Mockup](images/components-concept-001.png)
+![Mockup](images/CSCI.png)
 
 ##  5.3  Performance Requirements
 ####  5.3.1 Max Load Screen Time
