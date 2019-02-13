@@ -1,7 +1,7 @@
 #  Software Requirements Specification
 
 ##  5.1  Introduction
-TODO
+Inspired by QWOP and Getting Over it, 2D games with simple yet ridiculous game mechanics, Tongue and Cheek is a 2D side scroller game following a similar concept. As of right now, Tongue and Cheek is a light-hearted game featuring a single-player character progressing through time constrained individual levels using the mouse and the WASD keys. Tongue and Cheek is created for everyone.
 
 ##  5.2  CSCI Component Breakdown
 
