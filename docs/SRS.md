@@ -24,8 +24,6 @@ A Simple Mockup of our current CSCI is shown below.
 ![Mockup](images/components-concept-001.png)
 
 ##  5.3  Performance Requirements
-###  5.3.1  Loading Screen Time
-
 ####  5.3.1 Max Load Screen Time
 The application shall transition from the beginning of a non-playable loading screen back to gameplay or a menu within 7 seconds.
 
