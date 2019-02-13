@@ -25,13 +25,20 @@ A Simple Mockup of our current CSCI is shown below.
 
 ##  5.3  Functional Requirements by CSC
 
-###  5.3.1  Graphical User Interface
+###  5.3.1
+The user GUI will be very minimal. At most, it will show when the player's tongue rope is deployed.
 
-####  5.3.1.1
-TODO
+###  5.3.2 Tongue mechanic
+The user will be able to deploy a tongue rope via the left click button. The tongue has two uses, based on the location of the pointer when the tongue is deployed
 
-####  5.3.1.2
-TODO
+#### 5.3.2.1
+If the user's pointer is significantly above (more than 60 degrees from the ground) the character and connects with an anchor, the player's tongue will act as a rope, allowiing for the user to swing back and forth, thus releasing their tongue via a second left click
+
+#### 5.3.2.2
+If the user's pointer is below the threshold (less than 60 degrees from the ground) and connects with an anchor, the player's tongue will act as a speed grappling hook. The tongue will propel the anchor forward and over the anchor, thus progressing it through the level.
+
+### 5.3.3 Anchor mechanic
+The player is given the ability to connect to anchors around the map via its tongue rope. The anchors will be disguised within the map, although will have some stylistic properties to let it stand out. As it stands, anchors will be more heavily outlined and likely on a separate layer. Some anchors will be placed around the map not as a means for progressing the player through the map, but rather as a diversion from the actual goal.
 
 ##  5.4  Performance Requirements by CSC
 
