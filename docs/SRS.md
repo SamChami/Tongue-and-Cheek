@@ -23,44 +23,42 @@ TODO
 A Simple Mockup of our current CSCI is shown below.
 ![Mockup](images/components-concept-001.png)
 
-##  5.3  Functional Requirements by CSC
+##  5.3  Performance Requirements
 
-###  5.3.1  Graphical User Interface
+###  5.3.1  Loading Screen Time
 
-####  5.3.1.1
+####  5.3.1.1 Max Load Screen Time
+The application shall transition from the beginning of a non-playable loading screen back to gameplay or a menu within 7 seconds.
+
+####  5.3.1.2 TODO
 TODO
 
-####  5.3.1.2
+###  5.3.2 TODO
+
+####  5.3.2.1 TODO
 TODO
 
-##  5.4  Performance Requirements by CSC
+##  5.4  Environment Requirements
 
-###  5.4.1  Logging in or Registering
-TODO
+The following are the hardware requirements for Tongue and Cheek:
 
-###  5.4.2 Creating a New Activity
-TODO
+| Category         | Requirement           |
+| ---------------- | --------------------- |
+| Processor        | 2.7 GHz Intel Core i5 |
+| Hard Drive Space | 1 GB                  |
+| RAM              | 4 GB                  |
+| Display          | 1280×720, 256 colors  |
+| Sound Card       | Optional              |
 
-###  5.4.3 Selecting an Activity Banner
-TODO
+The exceptional RAM requirement is necessary to support the detailed sprite animation and graphical images. These graphical demands require a large amount of RAM. There will be limited sound functionality unless the user has a sound card.
 
-###  5.4.4 Locating Features to Use in Group Chat Environment
-TODO
 
-##  5.5  Project Environment Requirements
+The following are the software requirements for Tongue and Cheek:
 
-###  5.5.1  Development Environment Requirements
+| Category         | Requirement              |
+| ---------------- | ------------------------ |
+| Operating System | macOS Mojave, Windows 10 |
+| Compiler         | Unity; C++/C#            |
+| Graphics         | Adobe Photoshop          |
 
-####  5.5.1.1 Android Development
-
-#####  5.5.1.1.1 Android Studio for Android Phone Emulator
-
-#####  5.5.1.1.2 Mac, Windows, or Linux System
-
-####  5.5.1.2 iPhone Development
-
-#####  5.5.1.2.1 Xcode
-
-#####  5.5.1.2.2 An iPhone
-
-###  5.5.2  Execution Environment Requirements
+macOS Mojave or Windows 10 is required for this project. Because of the scope of the project, there will be no attempt to test the program under macOS Mojave or Windows 10. The program will be written in C++/C# using Unity. Adobe Photoshop will be used to produce the graphical images and sprites for the project.
