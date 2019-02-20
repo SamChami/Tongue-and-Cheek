@@ -4,22 +4,22 @@
 ###  Problem 5.1, Stephens page 116
 
 What's the difference between a component-based architecture and a service-oriented architecture?
->  TODO
+>  In *component-based software engineering*, you regard the system as a collection of loosely coupled components that provide services for each other. A *component-based architecture* decouples the pieces of code much as a multi-tier architecture does, but all the pieces are all contained within the same executable program, so they communicate directly instead of across a network. A *service-oriented architecture* is similar to component-based architecture except the pieces are implemented as services. A *service* is a self-contained program that runs on its own and provides some kind of service for its clients.
 
 ###  Problem 5.2, Stephens page 116
 
 Suppose you're building a phone application that lets you play tic-tac-toe against a simple computer opponent. It will display high scores stored on the phone, not in an external database. Which architectures would be most appropriate and why?
->  TODO
+>  Monolithic architecture because everything would be built into a single application so there's no need for complicated communication across networks. Event-driven architecture because it makes sense that after the user interacts with the interface/game the application should react in a way based on what the user did. Rules-based architecture because the game tic-tac-toe has rules that both the user and computer opponent should adhere to.
 
 ###  Problem 5.4, Stephens page 116
 
 Repeat question 3 [after thinking about it; it repeats question 2 for a chess game] assuming the chess program lets two users play against each other over an Internet connection.
->  TODO
+>  Client/server and multi-tier architecture because it would be great for users to access the client side of the application, manipulate data in a database (game properties/objects), and communicate over a network. Possibly service-oriented architecture since it would be if I wanted to implement the chess program as a web service. Rules-based architecture because the game chess has rules that both users should adhere to.
 
 ###  Problem 5.6, Stephens page 116
 
 What kind of database structure and maintenance should the `ClassyDraw` application use?
->  TODO
+>  The `ClassyDraw` application should use a relational database to keep track of components of drawings and the drawings themselves and a data warehouse to hold old data before eventually removing it if the application gets too slow.
 
 ###  Problem 5.8, Stephens page 116
 
