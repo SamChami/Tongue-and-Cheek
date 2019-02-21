@@ -29,7 +29,7 @@ Draw a state machine diagram to let a program read floating point numbers in sci
 ###  Problem 6.1, Stephens page 138
 
 Consider the `ClassyDraw` classes `Line`, `Rectangle`, `Ellipse`, `Star`, and `Text`. What properties do these classes all share? What properties do they not share? Are there any properties shared by some classes and not others? Where should the shared and non-shared properties be implemented?
->  TODO
+>  All classes share ForeColor, BackColor, UpperLeft, Width and Height. All classes but text share lineThickness, DashStyle, and FillColor. Rectangle, Ellipse, and Star all share FillColor as well. None-shared properties, such as Star's numPoints and Text's String and Font, should be in their direct class node.
 
 ###  Problem 6.2, Stephens page 138
 
