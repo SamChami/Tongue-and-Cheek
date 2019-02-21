@@ -48,7 +48,8 @@ The following list gives the properties of several business-oriented classes.
 *  VicePresident — Name, Phone, Address, EmployeeID, Office, Salary, Managers
 
 Assuming a `Supplier` is someone who supplies products for your business, draw an inheritance diagram showing the relationships among these classes. (Hint: Add extra classes if necessary.)
->  TODO
+>  ![6-3.jpg](6-3.jpg)
+
 
 ###  Problem 6.6, Stephens page 139
 
