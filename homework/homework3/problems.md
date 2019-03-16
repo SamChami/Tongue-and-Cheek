@@ -6,46 +6,63 @@
 The greatest common divisor (GCD) of two integers is the largest integer that evenly divides them both. For example, the GCD of 84 and 36 is 12, because 12 is the largest integer that evenly divides both 84 and 36. You can learn more about the GCD and the Euclidean algorithm, which you can find at en.wikipedia.org/wiki/Euclidean_algorithm. (Don't worry about the code if you can't understand it. Just focus on the comments.)(Hint: It should take you only a few seconds to fix these comments. Don't make a career out of it.)
 ```
          // Use Euclid's algorithm to calculate the GCD.
-         provate long GCD( long a, long b )
+         // See en.wikipedia.org/wiki/Euclidean_algorithm.
+         private long GCD( long a, long b )
          {
-            // Get the absolute value of a and b
             a = Math.abs( a );
             b = Math.abs( b );
 
-            //Repeat until we're done
             for( ; ; )
             {
-               // Set remainder to the remainder of a / b
                long remainder = a % b;
-               // If remainder is 0, we're done.  Return b.
-               If( remainder == 0 ) return b;
-               // Set a = b and b = remainder.
+               if (remainder == 0) return b;
                a = b;
                b = remainder;
             };
          }
 ```
->  TODO^
+>  Referencing where to learn more about the used algorithm and getting rid of obvious comments that clutter the code and don't add any explanation of why the code does what it does is better commented code.
 
 ###  Problem 7.2, Stephens page 170
 
 Under what two conditions might you end up with the bad comments shown in the previous code?
->  TODO
+>  The two conditions why the original GCD code ended up with bad comments are the programmer may have done a top-down design and the programmer added the comments after writing the code. In the first scenario, the programmer may have taken it to its logical conclusion where the code is described in excruciating detail. That’s good programming practice, but it can result in the kinds of redundant comments in the previous example because each comment describes a code statement. In the second scenario, it’s easy to just say what each line of code does and not why it is doing it after the code is written.
 
 ###  Problem 7.4, Stephens page 170
 
 How could you apply offensive programming to the modified code you wrote for exercise 3? [Yes, I know that problem wasn't assigned, but if you take a look at it you can still do this exercise.]
->  TODO
+>  The validation code written for Exercise 3 is already fairly offensive. It validates the inputs and the result, and the `Debug.Assert` method throws an exception if there is a problem.
 
 ###  Problem 7.5, Stephens page 170
 
 Should you add error handling to the modified code you wrote for Exercise 4?
->  TODO
+>  No because it would be better if the calling code handled any errors. As it is, if the code throws any exceptions, they are passed up to the calling code so that they can be handled there. Therefore there is no need to add error handling code here.
 
 ###  Problem 7.7, Stephens page 170
 
 Using top-down design, write the highest level of instructions that you would use to tell someone how to drive your car to the nearest supermarket. (Keep it at a very high level.) List any assumptions you make.
->  TODO
+>  High Level instructions to get to nearest supermarket:
+> * a. Go outside.
+> * b. Open car.
+> * c. Start car.
+> * d. Back out of driveway.
+> * e. Turn to the right and go down the street until the stop sign.
+> * f. Turn right. Drive until the first traffic light.
+> * g. Turn left. Drive to the supermarket parking lot on the right.
+> * h. Turn into the supermarket parking lot.
+> * i. Find an empty parking space and park in it.
+> * j. Stop the car and get out.
+> * k. Go inside supermarket.
+
+>  Assumptions:
+> * a. The car is outside in driveway.
+> * b. The car is shut.
+> * c. The car is functional.
+> * d. There’s nothing behind the car when you pull out of driveway.
+> * e. No cars driving down street
+> * f. Other cars and people obey traffic laws.
+> * g. There are empty parking spaces in the supermarket parking lot.
+> * h. The supermarket is open.
 
 ###  Problem 8.1, Stephens page 199
 
