@@ -164,8 +164,7 @@ Suppose you have three testers: Alice, Bob, and Carmen. You assign numbers to th
 >  To estimate the total number of bugs, we can pair up each tester and calculate the Lincoln index per pairing, then average the totals.
 > - Alice & Bob: ((5 * 4)/2) = 10
 > - Bob & Carmen: ((4 * 5)/1) = 20
-> - Carmen & Alice: ((5 * 5)/2) = 12.5
-> - Total bugs: ((10 + 20 + 12.5)/3) = 14.167 bugs. There's about 14 estimated bugs, but since this is just an estimation, there could be more.
+> - Carmen & Alice: ((5 * 5)/2) = 12.5 <br /> Total bugs: ((10 + 20 + 12.5)/3) = 14.167 bugs. There's about 14 estimated bugs, but since this is just an estimation, there could be more.
 
 ###  Problem 8.12, Stephens page 200
 
