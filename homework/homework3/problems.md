@@ -69,12 +69,45 @@ Using top-down design, write the highest level of instructions that you would us
 Two integers are ***relatively prime*** (or ***coprime***) if they have no common factors other than 1. For example, 21 = 3 X 7 and 35 = 5 X 7 are ***not*** relatively prime because they are both divisible by 7. By definition -1 and 1 are relatively prime to every integer, and they are the only numbers relatively prime to 0.
 
 Suppose you've written an efficient `IsRelativelyPrime` method that takes two integers between -1 million and 1 million as parameters and returns `true` if they are relatively prime. Use either your favorite programming language or pseudocode (English that sort of looks like code) to write a method that tests the `IsRelativelyPrime` method. (Hint: You may find it useful to write another method that also tests two integers to see if they are relatively prime.)
->  TODO
+``` python
+def is_relatively_prime_tests(self):
+  # Generic Tests
+  self.assertEqual(isRelativelyPrime(12, 13), True)
+  self.assertEqual(isRelativelyPrime(12, 14), False)
+
+  # Tests consistency on number ordering
+  self.assertEqual(isRelativelyPrime(12, 13), isRelativelyPrime(13, 12))
+  self.assertEqual(isRelativelyPrime(12, 14), isRelativelyPrime(14, 12))
+
+  # Edge cases
+  self.assertEqual(isRelativelyPrime(0, 1), True)
+  self.assertEqual(isRelativelyPrime(-1, 1), True)
+  self.assertEqual(isRelativelyPrime(0, 0), False)
+  self.assertEqual(isRelativelyPrime(0, 1000000), False)
+
+  # Random Selection
+  self.assertEqual(isRelativelyPrime(2, -2), False)
+  self.assertEqual(isRelativelyPrime(8888, 7777), False)
+  self.assertEqual(isRelativelyPrime(213421, 456456), False)
+  self.assertEqual(isRelativelyPrime(5, 275), False)
+  self.assertEqual(isRelativelyPrime(1000000, 11), True)
+  self.assertEqual(isRelativelyPrime(88888, 7777), True)
+  self.assertEqual(isRelativelyPrime(100000, 100001), True)
+
+  # Incorrect Inputs
+  self.assertRaises(TypeError, isRelativelyPrime('a', 100001))
+  self.assertRaises(TypeError, isRelativelyPrime('a', 'b'))
+  self.assertRaises(TypeError, isRelativelyPrime(100001, 'b'))
+  self.assertRaises(OutOfRangeError, isRelativelyPrime(2000000, -2000000))
+
+```
+
 
 ###  Problem 8.3, Stephens page 199
 
 What testing techniques did you use to write the test method in Exercise 1? (Exhaustive, black-box, white-box, or gray-box?) Which ones could you use and under what circumstances? [Please justify your answer with a short paragraph to explain.]
->  TODO
+>  I used grey-box testing because, while I did not know the exact details of the method, I knew the rules it followed and the expected results it was going to return. You could technically use exhaustive and white-box testing as well, because the inputs are within a range and the function could be made.
+I tried to test mainly for edge cases, type/input issues, and a few random errors. Knowing the basic concept of what the function does, I could determine that if the few random tests returned correctly, then it is likely that the algorithm is sound.
 
 ###  Problem 8.5, Stephens page 199 - 200
 
@@ -117,7 +150,8 @@ The `AreRelativelyPrime` method checks whether either value is 0. Only -1 and 1 
 The code then calls the `GCD` method to get the greatest common divisor of `a` and `b`. If the greatest common divisor is -1 or 1, the values are relatively prime, so the method returns `true`. Otherwise, the method returns `false`.
 
 Now that you know how the method works, implement it and your testing code in your favorite programming language. Did you find any bugs in your initial version of the method or in the testing code? Did you get any benefit from the testing code?
->  TODO
+>  (See coprime_implementation for revised testing code)
+I found that it would be best to split up the tests into separate functions based on category of test, so I can more easily determine what is erroring out. In my case, since there was no type checking in the given method, my test case for when strings are passed into the function failed, which in a industry setting would definitely prompt me to add that to the method itself.
 
 ###  Problem 8.9, Stephens page 200
 
