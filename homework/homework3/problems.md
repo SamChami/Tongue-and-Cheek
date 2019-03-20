@@ -165,10 +165,9 @@ Suppose you have three testers: Alice, Bob, and Carmen. You assign numbers to th
 > - Alice & Bob: ((5 * 4)/2) = 10
 > - Bob & Carmen: ((4 * 5)/1) = 20
 > - Carmen & Alice: ((5 * 5)/2) = 12.5
->  Total bugs: ((10 + 20 + 12.5)/3) = 14.167 bugs. There's about 14 estimated bugs, but since this is just an estimation, there could be more.
+> - Total bugs: ((10 + 20 + 12.5)/3) = 14.167 bugs. There's about 14 estimated bugs, but since this is just an estimation, there could be more.
 
 ###  Problem 8.12, Stephens page 200
 
 What happens to the Lincoln estimate if the two testers don't find any bugs in common? What does it mean? Can you get a "lower bound" estimate of the number of bugs?
->  The Lincoln index equation divides the bugs two testers find by the number of common bugs. If there are no common bugs, this means the Lincoln index would be dividing by 0, which would result in infinite bugs. And if there were infinite bugs, we don't know how many bugs there are.
->  If we assume that the two testers found one common bug, then the "lower bound" estimation would simply be the product of the the two testers' bugs. For example, if tester A found 3 bugs, tester B found 8 bugs, and we assume that they had one bug in common, then the Lincoln index would be ((3*8)/1) = 24 bugs.
+>  The Lincoln index equation divides the bugs two testers find by the number of common bugs. If there are no common bugs, this means the Lincoln index would be dividing by 0, which would result in infinite bugs. And if there were infinite bugs, we don't know how many bugs there are. <br /> If we assume that the two testers found one common bug, then the "lower bound" estimation would simply be the product of the the two testers' bugs. For example, if tester A found 3 bugs, tester B found 8 bugs, and we assume that they had one bug in common, then the Lincoln index would be ((3*8)/1) = 24 bugs.
