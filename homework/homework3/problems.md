@@ -156,14 +156,21 @@ I found that it would be best to split up the tests into separate functions base
 ###  Problem 8.9, Stephens page 200
 
 Exhaustive testing actually falls into one of the categories black-box, white-box, or gray-box. Which one is it and why?
->  TODO
+>  Black-box because exhaustive testing doesn't need to know what's occurring within the method in order to test it.
 
 ###  Problem 8.11, Stephens page 200
 
 Suppose you have three testers: Alice, Bob, and Carmen. You assign numbers to the bugs so the testers find the sets of bugs {1, 2, 3, 4, 5}, {2, 5, 6, 7}, and {1, 2, 8, 9, 10}. How can you use the Lincoln index to estimate the total number of bugs? How many bugs are still at large?
->  TODO
+>  To estimate the total number of bugs, we can pair up each tester and calculate the Lincoln index per pairing, then average the totals.
+> - Alice & Bob: ((5 * 4)/2) = 10
+> - Bob & Carmen: ((4 * 5)/1) = 20
+> - Carmen & Alice: ((5 * 5)/2) = 12.5
+<br />
+<br />Total bugs: ((10 + 20 + 12.5)/3) = 14.167 bugs. There's about 14 estimated bugs, but since this is just an estimation, there could be more.
 
 ###  Problem 8.12, Stephens page 200
 
 What happens to the Lincoln estimate if the two testers don't find any bugs in common? What does it mean? Can you get a "lower bound" estimate of the number of bugs?
->  TODO
+>  The Lincoln index equation divides the bugs two testers find by the number of common bugs. If there are no common bugs, this means the Lincoln index would be dividing by 0, which would result in infinite bugs. And if there were infinite bugs, we don't know how many bugs there are.
+<br />
+If we assume that the two testers found one common bug, then the "lower bound" estimation would simply be the product of the the two testers' bugs. For example, if tester A found 3 bugs, tester B found 8 bugs, and we assume that they had one bug in common, then the Lincoln index would be ((3*8)/1) = 24 bugs.
