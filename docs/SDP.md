@@ -28,10 +28,23 @@ The following are the software resources used for development and execution of T
 | Operating System | macOS Mojave, Windows 10  |
 | Compiler         | Unity; C++/C#             |
 | Graphics         | Adobe Photoshop, Inkscape |
+| Audacity         | Sound and Voice           |
 
 macOS Mojave or Windows 10 is required for this project. Because of the scope of the project, there will be no attempt to test the program under macOS Mojave or Windows 10. The program will be written in C++/C# using Unity. Adobe Photoshop and Inkscape will be used to produce the graphical images and sprites for the project.
 
 ##  4.3 Project Organization
+Within the src folder, the project is separated into Assets, Logs, Packages, and Project Settings. The "bulk" to the assignment is within the Assets folder. We are trying to separate our work into the following:
+### 4.3.1 Animations
+  Character animations, which include the walk and idle animation
+### 4.3.2 Graphics
+  Final versions of photoshop assets
+### 4.3.3 Prefabs
+ Prefabs are ready to use objects for level design. For example, platforms, walls, etc.
+### 4.3.4 Scenes
+  Level 0, 1, 2, main menu, etc.
+### 4.3.4 Textures
+  Photoshop assets that have been split for use on the level, likely for the background
+
 
 ##  4.4 Project Schedule
 
