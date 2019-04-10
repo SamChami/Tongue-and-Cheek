@@ -1,46 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// using Spine;
+// using Spine.Unity;
 
 public class PlayerPlatformerController : PhysicsObject {
 
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
-
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    [SerializeField] private GameObject graphic;
+    [SerializeField] private Animator animator;
+    // [SerializeField] private bool jumping;
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioClip[] stepSounds;
+    [SerializeField] private AudioClip[] jumpSounds;
 
-    // Use this for initialization
-    void Awake ()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer> ();
-        animator = GetComponent<Animator> ();
-    }
-
-    protected override void ComputeVelocity()
-    {
+    protected override void ComputeVelocity() {
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis ("Horizontal");
 
         if (Input.GetButtonDown ("Jump") && grounded) {
             velocity.y = jumpTakeOffSpeed;
-        } else if (Input.GetButtonUp ("Jump"))
-        {
+        } else if (Input.GetButtonUp ("Jump")) {
             if (velocity.y > 0) {
                 velocity.y = velocity.y * 0.5f;
             }
         }
 
-        bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-        if (flipSprite)
-        {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
+        if (graphic) {
+            if (move.x > 0.01f) {
+                if (graphic.transform.localScale.x == -1) {
+                    graphic.transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                }
+            } else if (move.x > 0.01f) {
+                if (graphic.transform.localScale.x == -1) {
+                    graphic.transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+                }
+            }
         }
 
-        animator.SetBool ("grounded", grounded);
-        animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
+        if (animator) {
+            animator.SetBool ("grounded", grounded);
+            animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
+        }
 
         targetVelocity = move * maxSpeed;
+    }
+
+    void Footstep() {
+      if (audio) {
+            audio.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
+            Debug.Log("playStepSounds");
+        }
+    }
+
+    void Jump() {
+        if (audio) {
+            audio.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
+            Debug.Log("playJumpSounds");
+        }
     }
 }
