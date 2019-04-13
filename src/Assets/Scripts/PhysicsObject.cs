@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PhysicsObject : MonoBehaviour {
 
+    private Animator anim;
+
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
 
@@ -27,6 +29,7 @@ public class PhysicsObject : MonoBehaviour {
 
     void Start ()
     {
+        anim = GetComponent<Animator>();
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask (Physics2D.GetLayerCollisionMask (gameObject.layer));
         contactFilter.useLayerMask = true;
@@ -35,7 +38,9 @@ public class PhysicsObject : MonoBehaviour {
     void Update ()
     {
         targetVelocity = Vector2.zero;
-        ComputeVelocity ();
+        anim.SetBool("grounded", grounded);
+
+        ComputeVelocity();
     }
 
     protected virtual void ComputeVelocity()
@@ -81,6 +86,7 @@ public class PhysicsObject : MonoBehaviour {
                 if (currentNormal.y > minGroundNormalY)
                 {
                     grounded = true;
+
                     if (yMovement)
                     {
                         groundNormal = currentNormal;

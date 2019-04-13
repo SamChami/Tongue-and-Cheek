@@ -812,6 +812,7 @@ GameObject:
   - component: {fileID: 852664594}
   - component: {fileID: 852664593}
   - component: {fileID: 852664591}
+  - component: {fileID: 852664598}
   m_Layer: 0
   m_Name: cheek
   m_TagString: Untagged
@@ -981,18 +982,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 852664590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cbb0d9c3315b484887e5777083e7a98, type: 3}
+  m_Script: {fileID: 11500000, guid: 30f4b9d6c1a8641418a2ae68cf6c688b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
   gravityModifier: 1
-  maxSpeed: 7
-  jumpTakeOffSpeed: 7
-  graphic: {fileID: 852664590}
-  animator: {fileID: 852664594}
-  audio: {fileID: 0}
-  stepSounds: []
-  jumpSounds: []
+--- !u!114 &852664598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852664590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e305dd1ae5f54324f9f30dcb3fef7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907228833
 GameObject:
   m_ObjectHideFlags: 0
