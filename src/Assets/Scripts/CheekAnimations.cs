@@ -20,9 +20,11 @@ public class CheekAnimations : MonoBehaviour
         } else if (Input.GetKey(KeyCode.UpArrow))
         {
             anim.SetBool("isLooking", true);
+            anim.SetBool("isDucking", false);
             anim.SetBool("isWalking", false);
         } else if (Input.GetKey(KeyCode.DownArrow))
         {
+            anim.SetBool("isLooking", false);
             anim.SetBool("isWalking", false);
             anim.SetBool("isDucking", true);
         } else
