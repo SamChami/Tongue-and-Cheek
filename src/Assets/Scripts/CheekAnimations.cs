@@ -28,15 +28,15 @@ public class CheekAnimations : MonoBehaviour
         {
             body.constraints = RigidbodyConstraints2D.None;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             anim.SetBool("isWalking", true);
-        } else if (Input.GetKey(KeyCode.UpArrow))
+        } else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             anim.SetBool("isLooking", true);
             anim.SetBool("isDucking", false);
             anim.SetBool("isWalking", false);
-        } else if (Input.GetKey(KeyCode.DownArrow))
+        } else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             anim.SetBool("isLooking", false);
             anim.SetBool("isWalking", false);
