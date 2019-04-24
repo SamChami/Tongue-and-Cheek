@@ -764,7 +764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &749548724
 Transform:
   m_ObjectHideFlags: 0
@@ -916,6 +916,8 @@ GameObject:
   - component: {fileID: 852664594}
   - component: {fileID: 852664593}
   - component: {fileID: 852664591}
+  - component: {fileID: 852664601}
+  - component: {fileID: 852664600}
   - component: {fileID: 852664598}
   m_Layer: 0
   m_Name: cheek
@@ -1064,19 +1066,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852664590}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 99.25783
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &852664597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,6 +1126,41 @@ MonoBehaviour:
   audio: {fileID: 0}
   stepSounds: []
   jumpSounds: []
+--- !u!114 &852664600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852664590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247c6f51f912c1a40b76c8f8028c3674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 100
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!232 &852664601
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852664590}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 4.5411644, y: -0.50457335}
+  m_ConnectedAnchor: {x: -19.673466, y: 5.712127}
+  m_AutoConfigureDistance: 0
+  m_Distance: 16.432852
+  m_MaxDistanceOnly: 1
 --- !u!1 &907228833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,7 +1875,9 @@ GameObject:
   - component: {fileID: 1382127656}
   - component: {fileID: 1382127657}
   - component: {fileID: 1382127658}
-  m_Layer: 0
+  - component: {fileID: 1382127659}
+  - component: {fileID: 1382127660}
+  m_Layer: 8
   m_Name: fork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1853,7 +1892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382127655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3099976, y: 12.07, z: -3}
+  m_LocalPosition: {x: -34.5, y: 9.65, z: 0}
   m_LocalScale: {x: 4.6, y: 4.6, z: 4.6}
   m_Children: []
   m_Father: {fileID: 1348184406}
@@ -1928,6 +1967,53 @@ EdgeCollider2D:
   - {x: -0.43348986, y: -0.16932032}
   - {x: -0.23623149, y: -0.17915559}
   - {x: 0.49083608, y: 0.35802758}
+--- !u!61 &1382127659
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382127655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.36, y: 2.27}
+    newSize: {x: 3.36, y: 2.27}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.36, y: 2.27}
+  m_EdgeRadius: 0
+--- !u!50 &1382127660
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382127655}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1386771362
 GameObject:
   m_ObjectHideFlags: 0
