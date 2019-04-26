@@ -546,7 +546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2415123, y: 3.5999985, z: -10}
+  m_LocalPosition: {x: -17.858997, y: 3.5999985, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1126297962}
@@ -1157,7 +1157,7 @@ DistanceJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 4.5411644, y: -0.50457335}
-  m_ConnectedAnchor: {x: -19.673466, y: 5.712127}
+  m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 16.432852
   m_MaxDistanceOnly: 1
@@ -2753,6 +2753,8 @@ MonoBehaviour:
   - m_Hash: -353163478
     m_ParentHash: 756556552
   - m_Hash: 1533542940
+    m_ParentHash: 756556552
+  - m_Hash: -1642747240
     m_ParentHash: 756556552
 --- !u!4 &2076326692
 Transform:
