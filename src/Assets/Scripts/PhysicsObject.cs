@@ -17,7 +17,6 @@ public class PhysicsObject : MonoBehaviour {
     protected ContactFilter2D contactFilter;
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D> (16);
-    protected DistanceJoint2D grappleTongue;
 
 
     protected const float minMoveDistance = 0.001f;
@@ -31,7 +30,6 @@ public class PhysicsObject : MonoBehaviour {
     void Start ()
     {
         anim = GetComponent<Animator>();
-        grappleTongue = GetComponent<DistanceJoint2D>();
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask (Physics2D.GetLayerCollisionMask (gameObject.layer));
         contactFilter.useLayerMask = true;
@@ -52,13 +50,8 @@ public class PhysicsObject : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (!grappleTongue.enabled)
-        {
-            velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
-        }
-
+        velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;
-
 
         grounded = false;
 
