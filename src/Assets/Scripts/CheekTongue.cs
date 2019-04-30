@@ -33,15 +33,7 @@ public class CheekTongue : MonoBehaviour
             {
                 Debug.Log("HIT");
                 joint.enabled = true;
-
-                //Vector2 connectPoint = contact.point + new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
-                //connectPoint.x = connectPoint.x / contact.collider.transform.localScale.x;
-                //connectPoint.y = connectPoint.y / contact.collider.transform.localScale.y;
-                //Debug.Log(connectPoint);
-
-                //joint.connectedAnchor = connectPoint;
                 joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
-
                 joint.distance = Vector2.Distance(transform.position, contact.point);
             } else
             {

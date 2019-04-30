@@ -1157,7 +1157,7 @@ DistanceJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 4.5411644, y: -0.50457335}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -19.673466, y: 5.712127}
   m_AutoConfigureDistance: 0
   m_Distance: 16.432852
   m_MaxDistanceOnly: 1
@@ -2753,8 +2753,6 @@ MonoBehaviour:
   - m_Hash: -353163478
     m_ParentHash: 756556552
   - m_Hash: 1533542940
-    m_ParentHash: 756556552
-  - m_Hash: -1642747240
     m_ParentHash: 756556552
 --- !u!4 &2076326692
 Transform:
