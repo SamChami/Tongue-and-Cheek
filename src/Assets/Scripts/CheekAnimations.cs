@@ -34,7 +34,6 @@ public class CheekAnimations : MonoBehaviour
         else
         {
             body.constraints = RigidbodyConstraints2D.None;
-
             anim.SetBool("isUpright", false);
 
             //         Debug.Log(transform.Find("tongue"));
