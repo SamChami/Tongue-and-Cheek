@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class LevelTriggers : MonoBehaviour
 {
+    public Transform SpawnPoint;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Finish"))
         {
-            Debug.Log("MyTag");
-        } 
-        if (col.CompareTag("Failed"))
+            levelComplete();
+        } else if (col.CompareTag("Failed"))
         {
-            Debug.Log("DIED");
+            levelFailed();
         }
-
     }
 
 
     void levelComplete()
     {
+        Debug.Log("Complete");
 
     }
 
     void levelFailed()
     {
-
+        transform.position = SpawnPoint.position;
     }
 }
 
