@@ -1,29 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// using Spine;
-// using Spine.Unity;
 
 public class PlayerPlatformerController : PhysicsObject {
 
     public float maxSpeed = 7;
-    public float jumpTakeOffSpeed = 7;
+    public float grappleTakeOffSpeed = 7;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject graphic;
     [SerializeField] private Animator animator;
-    // [SerializeField] private bool jumping;
-    [SerializeField] private AudioSource audio;
+    [SerializeField] private bool grappling;
+    [SerializeField] private new AudioSource audio;
     [SerializeField] private AudioClip[] stepSounds;
-    [SerializeField] private AudioClip[] jumpSounds;
+    [SerializeField] private AudioClip[] grappleSounds;
 
     protected override void ComputeVelocity() {
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis ("Horizontal");
 
-        if (Input.GetButtonDown ("Jump") && grounded) {
-            velocity.y = jumpTakeOffSpeed;
-        } else if (Input.GetButtonUp ("Jump")) {
+        if (Input.GetButtonDown ("Grapple") && grounded) {
+            velocity.y = grappleTakeOffSpeed;
+        } else if (Input.GetButtonUp ("Grapple")) {
             if (velocity.y > 0) {
                 velocity.y = velocity.y * 0.5f;
             }
@@ -52,14 +50,14 @@ public class PlayerPlatformerController : PhysicsObject {
     void Footstep() {
       if (audio) {
             audio.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
-            Debug.Log("playStepSounds");
+            // Debug.Log("playStepSounds");
         }
     }
 
-    void Jump() {
+    void Grapple() {
         if (audio) {
-            audio.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
-            Debug.Log("playJumpSounds");
+            audio.PlayOneShot(grappleSounds[Random.Range(0, grappleSounds.Length)]);
+            // Debug.Log("playGrappleSounds");
         }
     }
 }
