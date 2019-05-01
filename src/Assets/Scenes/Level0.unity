@@ -570,7 +570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -686,7 +686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2371979, y: 3.5999985, z: -10}
+  m_LocalPosition: {x: -2.2347717, y: 3.5999985, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1126297962}
@@ -817,7 +817,7 @@ RectTransform:
   m_Children:
   - {fileID: 1895770211}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 852664601}
   - component: {fileID: 852664600}
   - component: {fileID: 852664598}
-  - component: {fileID: 852664602}
+  - component: {fileID: 852664603}
   m_Layer: 0
   m_Name: cheek
   m_TagString: Untagged
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   graphic: {fileID: 852664590}
   animator: {fileID: 852664594}
   grappling: 0
-  audio: {fileID: 852664602}
+  audio: {fileID: 852664603}
   stepSounds:
   - {fileID: 8300000, guid: e885484e1bc99fb47a0ac3f6bfa586b1, type: 3}
   - {fileID: 8300000, guid: e885484e1bc99fb47a0ac3f6bfa586b1, type: 3}
@@ -1408,10 +1408,22 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 16.432852
   m_MaxDistanceOnly: 1
---- !u!82 &852664602
-AudioSource:
 --- !u!114 &852664602
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852664590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3095ce9144b55e441a5014187c4f4161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPoint: {fileID: 1382127656}
+  completeLevelUI: {fileID: 1895770210}
+--- !u!82 &852664603
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1506,12 +1518,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3095ce9144b55e441a5014187c4f4161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoint: {fileID: 1382127656}
-  completeLevelUI: {fileID: 1895770210}
 --- !u!1 &907228833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,7 +2060,7 @@ Transform:
   - {fileID: 2076326692}
   - {fileID: 1124906220}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1212129208
 GameObject:
