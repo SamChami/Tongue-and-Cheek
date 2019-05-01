@@ -35,7 +35,7 @@ public class CheekTongue : MonoBehaviour
                 joint.enabled = true;
                 joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                 joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
-                joint.distance = Vector2.Distance(transform.position, contact.point);
+                joint.distance = Vector2.Distance(transform.position, contact.point) / 1.5f;
 
             }
             else
