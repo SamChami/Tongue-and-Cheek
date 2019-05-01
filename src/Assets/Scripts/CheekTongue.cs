@@ -29,13 +29,16 @@ public class CheekTongue : MonoBehaviour
 
             contact = Physics2D.Raycast(transform.position, targetPosition - transform.position, distance, mask);
 
-            if (contact.collider != null)
+            if (contact.collider != null && contact.collider.gameObject.GetComponent<Rigidbody2D>() != null)
             {
                 Debug.Log("HIT");
                 joint.enabled = true;
                 joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
+                joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
                 joint.distance = Vector2.Distance(transform.position, contact.point);
-            } else
+
+            }
+            else
             {
                 Debug.Log("MISS");
                 Debug.Log(targetPosition.x);
