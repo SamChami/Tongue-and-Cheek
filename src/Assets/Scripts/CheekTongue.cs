@@ -33,6 +33,15 @@ public class CheekTongue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (joint == null) {
+            this.gameObject.AddComponent<DistanceJoint2D>();
+            joint = GetComponent<DistanceJoint2D>();
+            joint.enabled = false;
+            joint.enableCollision = true;
+            joint.autoConfigureConnectedAnchor = false;
+            joint.autoConfigureDistance = false;
+            joint.maxDistanceOnly = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -55,7 +64,7 @@ public class CheekTongue : MonoBehaviour
                 tongue.SetPosition(1, contact.point);
                 // Hanging
                 if (Double.IsNaN(tongueAngle) || tongueAngle > 65) {
-                    Debug.Log("HIT");
+                    Debug.Log("Hang");
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
@@ -68,12 +77,13 @@ public class CheekTongue : MonoBehaviour
                 // Grapple
                 else
                 {
+                    Debug.Log("Grapple");
                     cheek.velocity = new Vector2(20.0f, 40f);
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
                     joint.distance = 0;
-                  //  joint.breakForce = 800f;
+                    joint.breakForce = 800f;
                 }
             }
             else
@@ -82,19 +92,32 @@ public class CheekTongue : MonoBehaviour
                 Debug.Log(targetPosition.x);
                 Debug.Log(targetPosition.y);
 
-
             }
         }
 
         if (Input.GetKeyUp(KeyCode.E))
         {
-            joint.enabled = false;
+            if (joint != null)
+            {
+                joint.enabled = false;
+            }
             tongue.enabled = false;
         }
 
     }
     void FixedUpdate()
     {
-        tongue.SetPosition(0, backOfMouth.transform.position - new Vector3(0, 0, backOfMouth.transform.position.z));
+        if (joint != null)
+        {
+            tongue.SetPosition(0, backOfMouth.transform.position - new Vector3(0, 0, backOfMouth.transform.position.z));
+        } else
+        {
+            tongue.enabled = false;
+        }
+    }
+
+    private void OnJointBreak2D(Joint2D joint)
+    {
+        tongue.enabled = false;
     }
 }
