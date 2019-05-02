@@ -6,6 +6,7 @@ using UnityEngine;
 public class CheekTongue : MonoBehaviour
 {
     public LineRenderer tongue;
+
     DistanceJoint2D joint;
     Vector3 targetPosition;
     RaycastHit2D contact;
@@ -13,14 +14,17 @@ public class CheekTongue : MonoBehaviour
 
     public float distance = 100f;
     public LayerMask mask;
+    public Rigidbody2D cheek;
 
     Double tongueAngle;
     float tongueLength;
     double distanceFromOrigin;
+    Vector3 scaleFactor;
 
     // Start is called before the first frame update
     void Start()
     {
+        cheek = GetComponent<Rigidbody2D>();
         joint = GetComponent<DistanceJoint2D>();
         joint.enabled = false;
         tongue.enabled = false;
@@ -34,7 +38,7 @@ public class CheekTongue : MonoBehaviour
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = 0;
-
+            
             contact = Physics2D.Raycast(transform.position, targetPosition - transform.position, distance, mask);
 
             if (contact.collider != null && contact.collider.gameObject.GetComponent<Rigidbody2D>() != null)
@@ -43,20 +47,26 @@ public class CheekTongue : MonoBehaviour
                 distanceFromOrigin = contact.transform.position.y - transform.position.y;
                 tongueAngle = (180 / Math.PI) * Math.Asin(distanceFromOrigin / tongueLength);
                 Debug.Log(tongueAngle);
+
+                tongue.enabled = true;
+                tongue.SetPosition(0, backOfMouth.transform.position);
+                tongue.SetPosition(1, contact.point);
                 // Hanging
                 if (Double.IsNaN(tongueAngle) || tongueAngle > 50) {
                     Debug.Log("HIT");
                     joint.enabled = true;
-                    tongue.enabled = true;
-                    
+                    scaleFactor = contact.collider.gameObject.transform.localScale;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
-                    joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
+                    joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
                     joint.distance = tongueLength / 1.5f;
 
+                    Debug.Log(contact.point);
+                    Debug.Log(contact.collider.transform.position);
+                    Debug.Log(joint.connectedAnchor);
 
-                    tongue.SetPosition(0, backOfMouth.transform.position);
-                    tongue.SetPosition(1, contact.point);
-                } else if (tongueAngle < 50)
+
+                }
+                else if (tongueAngle < 50)
                 {
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
@@ -76,13 +86,16 @@ public class CheekTongue : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.E))
         {
+            
+
             joint.enabled = false;
             tongue.enabled = false;
         }
+
     }
     void FixedUpdate()
     {
+       // cheek.AddForce(new Vector2(1000f, 0f));
         tongue.SetPosition(0, backOfMouth.transform.position - new Vector3(0, 0, backOfMouth.transform.position.z));
-
     }
 }
