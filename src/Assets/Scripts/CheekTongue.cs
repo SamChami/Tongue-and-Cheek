@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ public class CheekTongue : MonoBehaviour
     public float distance = 100f;
     public LayerMask mask;
 
+    Double tongueAngle;
+    float tongueLength;
+    double distanceFromOrigin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,7 @@ public class CheekTongue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -31,12 +37,19 @@ public class CheekTongue : MonoBehaviour
 
             if (contact.collider != null && contact.collider.gameObject.GetComponent<Rigidbody2D>() != null)
             {
-                Debug.Log("HIT");
-                joint.enabled = true;
-                joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
-                joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
-                joint.distance = Vector2.Distance(transform.position, contact.point) / 1.5f;
-
+                tongueLength = Vector2.Distance(transform.position, contact.point);
+                distanceFromOrigin = contact.transform.position.y - transform.position.y;
+                tongueAngle = (180 / Math.PI) * Math.Asin(distanceFromOrigin / tongueLength);
+                Debug.Log(tongueAngle);
+                // Hanging
+                if (Double.IsNaN(tongueAngle) || tongueAngle > 50) {
+                    Debug.Log("HIT");
+                    joint.enabled = true;
+                    
+                    joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
+                    joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
+                    joint.distance = tongueLength / 1.5f;
+                }
             }
             else
             {
