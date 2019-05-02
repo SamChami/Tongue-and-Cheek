@@ -54,7 +54,7 @@ public class CheekTongue : MonoBehaviour
                 tongue.SetPosition(0, backOfMouth.transform.position);
                 tongue.SetPosition(1, contact.point);
                 // Hanging
-                if (Double.IsNaN(tongueAngle) || tongueAngle > 50) {
+                if (Double.IsNaN(tongueAngle) || tongueAngle > 65) {
                     Debug.Log("HIT");
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
@@ -66,12 +66,14 @@ public class CheekTongue : MonoBehaviour
                     Debug.Log(joint.connectedAnchor);
                 }
                 // Grapple
-                else if (tongueAngle < 50)
+                else
                 {
+                    cheek.velocity = new Vector2(20.0f, 40f);
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
                     joint.distance = 0;
+                  //  joint.breakForce = 800f;
                 }
             }
             else
@@ -86,8 +88,6 @@ public class CheekTongue : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.E))
         {
-            
-
             joint.enabled = false;
             tongue.enabled = false;
         }
@@ -95,7 +95,6 @@ public class CheekTongue : MonoBehaviour
     }
     void FixedUpdate()
     {
-       // cheek.AddForce(new Vector2(1000f, 0f));
         tongue.SetPosition(0, backOfMouth.transform.position - new Vector3(0, 0, backOfMouth.transform.position.z));
     }
 }

@@ -19,13 +19,6 @@ public class PlayerPlatformerController : PhysicsObject {
 
         move.x = Input.GetAxis ("Horizontal");
 
-        if (Input.GetButtonDown ("Grapple") && grounded) {
-            velocity.y = grappleTakeOffSpeed;
-        } else if (Input.GetButtonUp ("Grapple")) {
-            if (velocity.y > 0) {
-                velocity.y = velocity.y * 0.5f;
-            }
-        }
 
         if (graphic) {
             if (move.x > 0.01f) {
