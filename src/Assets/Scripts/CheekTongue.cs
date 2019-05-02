@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class CheekTongue : MonoBehaviour
 {
-
+    public LineRenderer tongue;
     DistanceJoint2D joint;
     Vector3 targetPosition;
     RaycastHit2D contact;
+    public GameObject backOfMouth;
 
     public float distance = 100f;
     public LayerMask mask;
@@ -22,6 +23,7 @@ public class CheekTongue : MonoBehaviour
     {
         joint = GetComponent<DistanceJoint2D>();
         joint.enabled = false;
+        tongue.enabled = false;
     }
 
     // Update is called once per frame
@@ -45,10 +47,21 @@ public class CheekTongue : MonoBehaviour
                 if (Double.IsNaN(tongueAngle) || tongueAngle > 50) {
                     Debug.Log("HIT");
                     joint.enabled = true;
+                    tongue.enabled = true;
                     
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
                     joint.distance = tongueLength / 1.5f;
+
+
+                    tongue.SetPosition(0, backOfMouth.transform.position);
+                    tongue.SetPosition(1, contact.point);
+                } else if (tongueAngle < 50)
+                {
+                    joint.enabled = true;
+                    joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
+                    joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
+                    joint.distance = 0;
                 }
             }
             else
@@ -60,9 +73,16 @@ public class CheekTongue : MonoBehaviour
 
             }
         }
+
         if (Input.GetKeyUp(KeyCode.E))
         {
             joint.enabled = false;
+            tongue.enabled = false;
         }
+    }
+    void FixedUpdate()
+    {
+        tongue.SetPosition(0, backOfMouth.transform.position - new Vector3(0, 0, backOfMouth.transform.position.z));
+
     }
 }
