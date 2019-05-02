@@ -43,6 +43,8 @@ public class CheekTongue : MonoBehaviour
 
             if (contact.collider != null && contact.collider.gameObject.GetComponent<Rigidbody2D>() != null)
             {
+                scaleFactor = contact.collider.gameObject.transform.localScale;
+
                 tongueLength = Vector2.Distance(transform.position, contact.point);
                 distanceFromOrigin = contact.transform.position.y - transform.position.y;
                 tongueAngle = (180 / Math.PI) * Math.Asin(distanceFromOrigin / tongueLength);
@@ -55,7 +57,6 @@ public class CheekTongue : MonoBehaviour
                 if (Double.IsNaN(tongueAngle) || tongueAngle > 50) {
                     Debug.Log("HIT");
                     joint.enabled = true;
-                    scaleFactor = contact.collider.gameObject.transform.localScale;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
                     joint.distance = tongueLength / 1.5f;
@@ -63,14 +64,13 @@ public class CheekTongue : MonoBehaviour
                     Debug.Log(contact.point);
                     Debug.Log(contact.collider.transform.position);
                     Debug.Log(joint.connectedAnchor);
-
-
                 }
+                // Grapple
                 else if (tongueAngle < 50)
                 {
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
-                    joint.connectedAnchor = contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y);
+                    joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
                     joint.distance = 0;
                 }
             }
