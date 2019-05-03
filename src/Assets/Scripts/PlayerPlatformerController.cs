@@ -32,6 +32,7 @@ public class PlayerPlatformerController : PhysicsObject {
             }
         }
 
+
         if (animator) {
             animator.SetBool ("grounded", grounded);
             animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);

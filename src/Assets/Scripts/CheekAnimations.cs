@@ -20,23 +20,18 @@ public class CheekAnimations : MonoBehaviour
     {
         if (anim.GetBool("grounded"))
         {
-            if (body.transform.localEulerAngles.z != 0)
-            {
-                Quaternion rot = new Quaternion();
-                rot.eulerAngles = new Vector3(0, 0, 0);
-                transform.rotation = rot;
-            } else
+            if (transform.rotation.z < 10f)
             {
                 anim.SetBool("isUpright", true);
-                body.constraints = RigidbodyConstraints2D.FreezeRotation;
+            } else
+            {
+                anim.SetBool("isUpright", false);
             }
+
         }
         else
         {
-            body.constraints = RigidbodyConstraints2D.None;
             anim.SetBool("isUpright", false);
-
-            //         Debug.Log(transform.Find("tongue"));
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {

@@ -45,6 +45,7 @@ public class CheekTongue : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = 0;
             
@@ -52,8 +53,9 @@ public class CheekTongue : MonoBehaviour
 
             if (contact.collider != null && contact.collider.gameObject.GetComponent<Rigidbody2D>() != null)
             {
-                scaleFactor = contact.collider.gameObject.transform.localScale;
+                cheek.constraints = RigidbodyConstraints2D.None;
 
+                scaleFactor = contact.collider.gameObject.transform.localScale;
                 tongueLength = Vector2.Distance(transform.position, contact.point);
                 distanceFromOrigin = contact.transform.position.y - transform.position.y;
                 tongueAngle = (180 / Math.PI) * Math.Asin(distanceFromOrigin / tongueLength);
@@ -78,7 +80,7 @@ public class CheekTongue : MonoBehaviour
                 else
                 {
                     Debug.Log("Grapple");
-                    cheek.velocity = new Vector2(20.0f, 40f);
+                    cheek.velocity = new Vector2((float)tongueAngle * 1.5f, (float)tongueAngle * 1.5f);
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
@@ -109,10 +111,26 @@ public class CheekTongue : MonoBehaviour
     {
         if (joint != null)
         {
+
+
             tongue.SetPosition(0, backOfMouth.transform.position - new Vector3(0, 0, backOfMouth.transform.position.z));
         } else
         {
             tongue.enabled = false;
+        }
+
+        if (!joint.enabled && transform.rotation.z != 0)
+        {
+            float tiltAngle = 60.0f;
+            float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
+            float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
+
+            // Rotate the cube by converting the angles into a quaternion.
+            Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5f);
+            cheek.rotation = 0;
+            cheek.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
