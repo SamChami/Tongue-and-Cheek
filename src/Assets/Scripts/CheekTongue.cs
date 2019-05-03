@@ -59,7 +59,6 @@ public class CheekTongue : MonoBehaviour
                 tongueLength = Vector2.Distance(transform.position, contact.point);
                 distanceFromOrigin = contact.transform.position.y - transform.position.y;
                 tongueAngle = (180 / Math.PI) * Math.Asin(distanceFromOrigin / tongueLength);
-                Debug.Log(tongueAngle);
 
                 tongue.enabled = true;
                 tongue.SetPosition(0, backOfMouth.transform.position);
@@ -80,7 +79,9 @@ public class CheekTongue : MonoBehaviour
                 else
                 {
                     Debug.Log("Grapple");
-                    cheek.velocity = new Vector2((float)tongueAngle * 1.5f, (float)tongueAngle * 1.5f);
+                    Debug.Log(tongueAngle);
+                    float direction = transform.position.x < contact.transform.position.x ? 1 : -1;
+
                     joint.enabled = true;
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
@@ -88,7 +89,11 @@ public class CheekTongue : MonoBehaviour
                     if (tongueAngle > 45)
                     {
                         joint.breakForce = 800f;
-
+                        cheek.velocity = new Vector2(direction * 20f, 100f);
+                    }
+                    else
+                    {
+                        cheek.velocity = new Vector2(direction * 100f, 40f);
                     }
                 }
             }
