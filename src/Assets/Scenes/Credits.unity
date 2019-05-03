@@ -619,22 +619,22 @@ PrefabInstance:
     - target: {fileID: 9022217534217956832, guid: 3457c849ade40456db5ee7f2b7878cb6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 252
+      value: 123.5
       objectReference: {fileID: 0}
     - target: {fileID: 9022217534217956832, guid: 3457c849ade40456db5ee7f2b7878cb6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -212
+      value: -172
       objectReference: {fileID: 0}
     - target: {fileID: 9022217534217956832, guid: 3457c849ade40456db5ee7f2b7878cb6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 188
+      value: 356
       objectReference: {fileID: 0}
     - target: {fileID: 9022217534217956832, guid: 3457c849ade40456db5ee7f2b7878cb6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 32.1
+      value: 60.8
       objectReference: {fileID: 0}
     - target: {fileID: 9022217534217956832, guid: 3457c849ade40456db5ee7f2b7878cb6,
         type: 3}
@@ -689,7 +689,7 @@ PrefabInstance:
     - target: {fileID: 9022217534608495544, guid: 3457c849ade40456db5ee7f2b7878cb6,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 20
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 9022217534608495544, guid: 3457c849ade40456db5ee7f2b7878cb6,
         type: 3}
@@ -777,6 +777,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &959662862
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8704484717625113223, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113221, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704484717625113222, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b503cbc634e474341a455d2928042e26, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f16e649bc0a6f47e1ba9b36b4f5d3e02, type: 3}
 --- !u!1 &1093174656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bbf8fdfba68d4009a58f8fe1f597a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 0}
 --- !u!1 &1555772446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7765339444752510994, guid: a87065e0b09b34d49ab15a015f91a7d1,
