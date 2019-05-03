@@ -20,10 +20,13 @@ public class CheekAnimations : MonoBehaviour
     {
         if (anim.GetBool("grounded"))
         {
-            if (transform.rotation.z < 10f)
+            if (transform.rotation.z < 5f)
             {
                 anim.SetBool("isUpright", true);
-            } else
+                transform.eulerAngles = new Vector3(0, 0, 0);
+
+            }
+            else
             {
                 anim.SetBool("isUpright", false);
             }

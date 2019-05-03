@@ -136,10 +136,19 @@ public class CheekTongue : MonoBehaviour
 
             // Rotate the cube by converting the angles into a quaternion.
             Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+            Quaternion q = transform.rotation;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5f);
             cheek.rotation = 0;
             cheek.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            //   transform.rotation.eulerAngles = new Vector3(0, 0, 0);
+
+
+          //  transform.RotateAround(new Vector3 , Vector3.left, rotateSpeed * Time.deltaTime);
+          //  Quaternion q = transform.rotation;
+         //   q.eulerAngles = new Vector3(q.eulerAngles.x, q.eulerAngles.y, 0);
+          //  transform.rotation = q;
         }
     }
 
