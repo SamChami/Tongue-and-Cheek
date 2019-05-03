@@ -85,7 +85,11 @@ public class CheekTongue : MonoBehaviour
                     joint.connectedBody = contact.collider.gameObject.GetComponent<Rigidbody2D>();
                     joint.connectedAnchor = (contact.point - new Vector2(contact.collider.transform.position.x, contact.collider.transform.position.y)) / scaleFactor;
                     joint.distance = 0;
-                    joint.breakForce = 800f;
+                    if (tongueAngle > 45)
+                    {
+                        joint.breakForce = 800f;
+
+                    }
                 }
             }
             else
