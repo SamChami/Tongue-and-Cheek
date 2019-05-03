@@ -89,11 +89,11 @@ public class CheekTongue : MonoBehaviour
                     if (tongueAngle > 45)
                     {
                         joint.breakForce = 800f;
-                        cheek.velocity = new Vector2(direction * 5f, 80f);
+                        cheek.velocity = new Vector2(direction * 5f, 50f);
                     }
                     else
                     {
-                        cheek.velocity = new Vector2(direction * 5f, 50f);
+                        cheek.velocity = new Vector2(direction * 5f, 30f);
                     }
                 }
             }
